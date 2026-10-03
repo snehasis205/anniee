@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Wizarding World of Annie ✨</title>
+<meta name="description" content="A little corner of the Wizarding World, made just for you.">
+<!-- FAVICON PLACEHOLDER: replace with your own icon file if you like -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<canvas id="fx"></canvas>
+
+<!-- OPENING SEQUENCE -->
+<div id="intro">
+  <p id="introText"></p>
+  <h1 id="introName" class="hide"></h1>
+  <p id="introSub" class="hide">This is the beginning of a new chapter.<br>Welcome to the Wizarding World.</p>
+  <button id="enterBtn" class="btn hide">ENTER THE MAGIC ✨</button>
+</div>
+
+<div id="site" class="hide">
+<nav>
+  <button id="burger" aria-label="Menu">☰</button>
+  <div id="links">
+    <a href="#hero">Home</a><a href="#letter">Letter</a><a href="#sorting">Sorting Hat</a><a href="#games">Games</a>
+    <a href="#music">Music</a><a href="#map">Marauder's Map</a><a href="#quidditch">Quidditch</a><a href="#chapter">New Chapter</a>
+  </div>
+  <button id="soundBtn" aria-pressed="false">🔇 SOUND OFF</button>
+</nav>
+
+<section id="hero">
+  <div class="moon" id="moon" role="img" aria-label="Moon"></div>
+  <svg class="castle" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120V80h30V50l8-20 8 20v30h30V60h20V40l8-18 8 18v20h30V70h40V30l10-24 10 24v40h30V55h24V35l8-16 8 16v20h30V80h60v40z" fill="#04040a"/></svg>
+  <h1 class="big nm"></h1>
+  <p class="sub">A little corner of the Wizarding World, made just for you.</p>
+  <p class="hand">And maybe… the first page of something new.</p>
+  <div class="row"><a class="btn" href="#letter">ENTER HOGWARTS</a><a class="btn" href="#games">PLAY MAGIC</a><a class="btn" href="#sorting">DISCOVER YOUR HOUSE</a></div>
+</section>
+
+<section id="letter">
+  <h2>The letter was waiting for you.</h2>
+  <div id="envelope"><div class="seal">H</div></div>
+  <button class="btn" id="openLetter">OPEN THE LETTER</button>
+  <article class="paper hide" id="letterBody">
+    <p><b>Dear <span class="nm"></span>,</b></p>
+    <p>We are pleased to inform you that you have been invited to step into a little world of magic, memories, games and adventures.</p>
+    <p>Every great story begins with a first step. Maybe this little website can be one of those first steps too.<br>A beginning. A new chapter. Something new waiting to be discovered.</p>
+    <p class="hand"><b>Your magical adventure begins now.</b></p>
+    <a class="btn dark" href="#map">OPEN THE MARAUDER'S MAP</a>
+  </article>
+</section>
+
+<section id="sorting">
+  <h2>THE SORTING HAT</h2>
+  <p class="sub">The hat has been waiting for you, <span class="nm"></span>.</p>
+  <div class="hat" aria-hidden="true">🎩</div>
+  <div id="sortBox" class="paper"></div>
+</section>
+
+<section id="games">
+  <h2>THE GREAT HALL OF GAMES</h2>
+  <div class="row" id="tabs">
+    <button class="btn" data-g="snitch">Golden Snitch</button><button class="btn" data-g="spells">Spell Casting</button>
+    <button class="btn" data-g="trivia">Trivia</button><button class="btn" data-g="memory">Memory Charm</button>
+  </div>
+  <div id="gameArea" class="paper"></div>
+</section>
+
+<section id="music">
+  <h2>MUSIC FROM THE WIZARDING WORLD</h2>
+  <p class="hand">Every adventure needs a soundtrack.</p>
+  <div class="waves" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div id="player" class="paper">
+    <p><b>Featured: Hedwig's Theme</b></p>
+    <!-- INSERT LEGITIMATE MUSIC SOURCE HERE: set CONFIG.musicEmbed in script.js (Spotify/YouTube embed URL). -->
+    <div id="embedSlot"></div>
+  </div>
+</section>
+
+<section id="map">
+  <h2>I SOLEMNLY SWEAR THAT I AM UP TO NO GOOD.</h2>
+  <div id="mapBoard" class="paper"><span class="steps" aria-hidden="true">👣 👣 👣</span></div>
+  <p id="mapInfo" class="hand" aria-live="polite">Tap a place on the map.</p>
+  <button class="btn" id="mischief">MISCHIEF MANAGED</button>
+</section>
+
+<section id="quidditch">
+  <h2>QUIDDITCH TARGET CHALLENGE</h2>
+  <p class="sub">The Quaffle is waiting, <span class="nm"></span>. Tap the hoops.</p>
+  <div id="qBox" class="paper"></div>
+</section>
+
+<section id="chapter">
+  <h2>A NEW CHAPTER BEGINS</h2>
+  <p id="chapText" class="big2"></p>
+  <button class="btn hide" id="chapBtn">OPEN THE NEW CHAPTER ✨</button>
+</section>
+
+<section id="message" class="hide">
+  <h2>ONE LAST SPELL…</h2>
+  <div id="typed" class="paper"></div>
+</section>
+
+<section id="ending">
+  <svg class="castle" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120V80h30V50l8-20 8 20v30h30V60h20V40l8-18 8 18v20h30V70h40V30l10-24 10 24v40h30V55h24V35l8-16 8 16v20h30V80h60v40z" fill="#04040a"/></svg>
+  <h2 id="endText" class="big2"></h2>
+  <button class="btn hide" id="restart">RESTART THE EXPERIENCE</button>
+</section>
+</div>
+<div id="toast" class="hide" role="status"></div>
+<script src="script.js"></script>
+</body></html>
